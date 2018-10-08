@@ -1,0 +1,181 @@
+{
+  "_id": "5bbad240a6d0da1122c2f06b",
+  "label": "Bitter",
+  "identifier": "bitter",
+  "schemas": [
+    {
+      "_id": "SCH_1",
+      "enabled": true,
+      "label": "User",
+      "label_plural": "Users",
+      "identifier": "user",
+      "identifier_plural": "users",
+      "class_name": "User",
+      "class_name_plural": "Users",
+      "attributes": [
+        {
+          "order": 0,
+          "label": "E-Mail",
+          "help": "E-Mail address associated with this Contact.",
+          "required": true,
+          "unique": true,
+          "datatype": "TEXT",
+          "datatypeOptions": {},
+          "identifier": "email",
+          "_id": "attr_26577092992831",
+          "locked": true
+        },
+        {
+          "order": 1,
+          "label": "Username",
+          "help": "The user's username",
+          "required": true,
+          "unique": true,
+          "datatype": "TEXT",
+          "datatypeOptions": {},
+          "identifier": "username",
+          "_id": "attr_265770dpskks31",
+          "locked": true
+        }
+      ],
+      "relations": []
+    },
+    {
+      "_id": "5bbad274a6d0da1122c2f06c",
+      "label": "Tweet",
+      "label_plural": "Tweets",
+      "identifier": "tweet",
+      "identifier_plural": "tweets",
+      "class_name": "Tweet",
+      "class_name_plural": "Tweets",
+      "relations": [
+        {
+          "id": null,
+          "order": 0,
+          "type": "BELONGS_TO",
+          "required": false,
+          "generate_reverse": true,
+          "related_schema_id": "SCH_1",
+          "reverse_relation_id": "",
+          "as": "",
+          "reverse_as": "",
+          "_id": "5bbad291a6d0da1122c2f06d",
+          "schema_id": "5bbad274a6d0da1122c2f06c"
+        }
+      ],
+      "attributes": [
+        {
+          "order": 0,
+          "label": "Body",
+          "identifier": "body",
+          "help": "",
+          "required": true,
+          "unique": true,
+          "datatype": "TEXT",
+          "datatypeOptions": {}
+        }
+      ]
+    },
+    {
+      "_id": "5bbad2b8a6d0da1122c2f06e",
+      "label": "Favorite",
+      "label_plural": "Favorites",
+      "identifier": "favorite",
+      "identifier_plural": "favorites",
+      "class_name": "Favorite",
+      "class_name_plural": "Favorites",
+      "relations": [
+        {
+          "id": null,
+          "order": 0,
+          "type": "BELONGS_TO",
+          "required": false,
+          "generate_reverse": true,
+          "related_schema_id": "SCH_1",
+          "reverse_relation_id": "",
+          "as": "",
+          "reverse_as": "",
+          "_id": "5bbad2cda6d0da1122c2f06f",
+          "schema_id": "5bbad2b8a6d0da1122c2f06e"
+        },
+        {
+          "id": null,
+          "order": 1,
+          "type": "BELONGS_TO",
+          "required": false,
+          "generate_reverse": true,
+          "related_schema_id": "5bbad274a6d0da1122c2f06c",
+          "reverse_relation_id": "",
+          "as": "",
+          "reverse_as": "",
+          "_id": "5bbad33fda990e61d643ce75",
+          "schema_id": "5bbad2b8a6d0da1122c2f06e"
+        }
+      ],
+      "attributes": [
+        {
+          "order": 0,
+          "label": "Created",
+          "identifier": "created",
+          "help": "",
+          "required": true,
+          "unique": false,
+          "datatype": "DATETIME",
+          "datatypeOptions": {},
+          "_id": "5bbad3110b0e44e3f2214c4c"
+        }
+      ]
+    },
+    {
+      "_id": "5bbad942d9f152fc59d7c617",
+      "label": "Follow",
+      "label_plural": "Follows",
+      "identifier": "follow",
+      "identifier_plural": "follows",
+      "class_name": "Follow",
+      "class_name_plural": "Follows",
+      "relations": [
+        {
+          "id": null,
+          "order": 0,
+          "type": "BELONGS_TO",
+          "required": false,
+          "generate_reverse": true,
+          "related_schema_id": "SCH_1",
+          "reverse_relation_id": "",
+          "as": "Follower",
+          "reverse_as": "Followed User",
+          "_id": "5bbad9fcd9f152fc59d7c618",
+          "schema_id": "5bbad942d9f152fc59d7c617"
+        },
+        {
+          "id": null,
+          "order": 1,
+          "type": "BELONGS_TO",
+          "required": false,
+          "generate_reverse": true,
+          "related_schema_id": "SCH_1",
+          "reverse_relation_id": "",
+          "as": "Followed User",
+          "reverse_as": "Follower",
+          "_id": "5bbada08d9f152fc59d7c619",
+          "schema_id": "5bbad942d9f152fc59d7c617"
+        }
+      ],
+      "attributes": [
+        {
+          "order": 0,
+          "label": "Active",
+          "identifier": "active",
+          "help": "",
+          "required": false,
+          "unique": false,
+          "datatype": "BOOL",
+          "datatypeOptions": {},
+          "_id": "5bbada39d9f152fc59d7c61a"
+        }
+      ]
+    }
+  ],
+  "seeds": []
+}
